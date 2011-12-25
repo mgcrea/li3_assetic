@@ -33,12 +33,10 @@ class Assetic extends \lithium\template\Helper {
 	protected $scriptAssetCollection;
 	protected $scriptAssetManager;
 	protected $scriptAssetWriter;
-	protected $scriptsWebroot;
 
 	protected $styleAssetCollection;
 	protected $styleAssetManager;
 	protected $styleAssetWriter;
-	protected $stylesWebroot;
 
 	/**
 	 * Configures this helper

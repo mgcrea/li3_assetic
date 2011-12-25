@@ -23,7 +23,12 @@ Using `Lithium Assetic Plugin` requires [Assetic](https://github.com/kriswallsmi
 		 * Assetic configuration
 		 */
 
+		use lithium\core\Libraries;
+		use li3_assetic\extensions\helper\Assetic;
+
+		Libraries::add('lessc', array('path' => LITHIUM_APP_PATH . '/libraries/lessphp', 'prefix' => false, 'suffix' => '.inc.php'));
 		use Assetic\Filter\LessphpFilter;
+
 		use Assetic\Filter\Yui;
 
 		Assetic::config(array(
