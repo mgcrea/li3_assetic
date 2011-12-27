@@ -10,8 +10,17 @@ This repository contains a [Lithium](https://github.com/UnionOfRAD/lithium) help
 Using `Lithium Assetic Plugin` requires [Assetic](https://github.com/kriswallsmith/assetic).
 
 1. Clone [Assetic](https://github.com/kriswallsmith/assetic) to the `app/librairies/_source/assetic` folder.
+
+		git submodule add https://github.com/kriswallsmith/assetic.git libraries/_source/assetic
+
 2. Symlink `app/librairies/Assetic` to `app/librairies/_source/assetic/src/Assetic`.
+
+		ln -s _source/assetic/src/Assetic libraries/Assetic
+
 2. Clone this plugin to `app/librairies/li3_assetic`
+
+		git submodule add https://github.com/mgcrea/li3_assetic.git libraries/li3_assetic
+
 3. Load both librairies in your `config/bootstrap/librairies.php` file :
 
 		Libraries::add('Assetic');
