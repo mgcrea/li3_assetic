@@ -53,7 +53,7 @@ Using `Lithium Assetic Plugin` requires [Assetic](https://github.com/kriswallsmi
 		// Regular call
 		<?php echo $this->assetic->script(array('libs/json2', 'libs/phonegap-1.2.0', 'libs/underscore', 'libs/mustache')); ?>
 		// Use some filter (will be processed even in development mode)
-		<?php echo $this->assetic->style(array('mobile/core'), array('target' => 'mobile.css', 'filters' => array('lessphp')); ?>
+		<?php echo $this->assetic->style(array('mobile/core'), array('target' => 'mobile.css', 'filters' => array('lessphp'))); ?>
 		// Use glob asset (will be processed even in development mode)
 		<?php echo $this->assetic->script(array('php/*.js'), array('target' => 'php.js'));
 
