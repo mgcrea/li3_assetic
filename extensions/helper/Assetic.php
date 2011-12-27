@@ -120,7 +120,7 @@ class Assetic extends \lithium\template\Helper {
 					$asset->setTargetPath($leaf);
 					$aw->writeAsset($asset);
 				}
-				echo "\t" . $this->_context->helper('html')->style($leaf) . "\n";
+				echo $this->_context->helper('html')->style($leaf) . "\n\t";
 			}
 
 		}
@@ -201,7 +201,7 @@ class Assetic extends \lithium\template\Helper {
 					$asset->setTargetPath($leaf);
 					$aw->writeAsset($asset);
 				}
-				echo "\t" . $this->_context->helper('html')->script($leaf) . "\n";
+				echo $this->_context->helper('html')->script($leaf) . "\n\t";
 			}
 		}
 
