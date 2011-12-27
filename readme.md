@@ -59,12 +59,12 @@ Using `Lithium Assetic Plugin` requires [Assetic](https://github.com/kriswallsmi
 
 6. Make sur to end your layout with final (production only by default) configuration :
 
-		<?php echo $this->assetic->styles(array('target' => 'mobile.css', 'filters' => 'yui_css')); ?>
-		<?php echo $this->assetic->scripts(array('target' => 'mobile.js', 'filters' => 'yui_js')); ?>
+		<?php echo $this->assetic->styles(array('target' => 'mobile.css', 'filters' => 'yui_css')); ?> // Will not overwrite existing compiled file by default
+		<?php echo $this->assetic->scripts(array('target' => 'mobile.js', 'filters' => 'yui_js', 'force' => true)); ?> // Will generated compiled output even if files exists
 
-7. You can activate compilation/filters with (like on top of your layout file) :
+7. You can activate compilation/filters with (like on top of your layout file), it is off by default in a `development` environment :
 
-		<?php $this->assetic->config(array('optimize' => true)); ?>
+		<?php $this->assetic->config(array('optimize' => true)); ?> // Force activation in development environment
 
 
 ## BUGS AND CONTRIBUTIONS ##
