@@ -44,14 +44,14 @@ Using `Lithium Assetic Plugin` requires [Assetic](https://github.com/kriswallsmi
 		// Regular call
 		<?php echo $this->assetic->script(array('libs/json2', 'libs/phonegap-1.2.0', 'libs/underscore', 'libs/mustache')); ?>
 		// Use some filter (will be processed even in development mode)
-		<?php echo $this->assetic->style(array('mobile/core'), array('filters' => array('lessphp'), 'target' => 'mobile.css')); ?>
+		<?php echo $this->assetic->style(array('mobile/core'), array('target' => 'mobile.css', 'filters' => array('lessphp')); ?>
 		// Use glob asset (will be processed even in development mode)
 		<?php echo $this->assetic->script(array('php/*.js'), array('target' => 'php.js'));
 
 6. Make sur to end your layout with final (production only by default) configuration :
 
-		<?php echo $this->assetic->styles(array('name' => 'mobile', 'filters' => 'yui_css')); ?>
-		<?php echo $this->assetic->scripts(array('name' => 'mobile', 'filters' => 'yui_js')); ?>
+		<?php echo $this->assetic->styles(array('target' => 'mobile.css', 'filters' => 'yui_css')); ?>
+		<?php echo $this->assetic->scripts(array('target' => 'mobile.js', 'filters' => 'yui_js')); ?>
 
 7. You can activate compilation/filters with (like on top of your layout file) :
 

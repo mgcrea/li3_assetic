@@ -136,7 +136,7 @@ class Assetic extends \lithium\template\Helper {
 		}
 
 		$defaults = array(
-			'name' => "main",
+			'target' => "main",
 			'type' => "style",
 			'force' => false,
 			'filters' => array()
@@ -156,16 +156,17 @@ class Assetic extends \lithium\template\Helper {
 			$ac->ensureFilter($filter);
 		}
 
-		$ac->setTargetPath($options['name'] . '.css');
+		$options['target'] = self::normalizeExtension($options['target'], $options['type']);
+		$ac->setTargetPath($options['target']);
 		$am->set($options['name'], $ac);
 
 		//echo $ac->dump(); exit;
 		// Write static assets
-		if($options['force'] || !is_file($this->stylesWebroot . DS . $options['name'] . '.css')) {
+		if($options['force'] || !is_file($this->stylesWebroot . DS . $options['target'])) {
 			$aw->writeManagerAssets($am);
 		}
 
-		return $this->_context->helper('html')->style($options['name'], array('inline' => true));
+		return $this->_context->helper('html')->style($options['target'], array('inline' => true));
 
 	}
 
@@ -215,7 +216,7 @@ class Assetic extends \lithium\template\Helper {
 		}
 
 		$defaults = array(
-			'name' => "main",
+			'target' => "main",
 			'type' => "script",
 			'force' => false,
 			'filters' => array()
@@ -235,16 +236,17 @@ class Assetic extends \lithium\template\Helper {
 			$ac->ensureFilter($filter);
 		}
 
-		$ac->setTargetPath($options['name'] . '.js');
+		$options['target'] = self::normalizeExtension($options['target'], $options['type']);
+		$ac->setTargetPath($options['target']);
 		$am->set($options['name'], $ac);
 
 		//echo $ac->dump(); exit;
 		// Write static assets
-		if($options['force'] || !is_file($this->scriptsWebroot . DS . $options['name'] . '.js')) {
+		if($options['force'] || !is_file($this->scriptsWebroot . DS . $options['target'])) {
 			$aw->writeManagerAssets($am);
 		}
 
-		return $this->_context->helper('html')->script($options['name'], array('inline' => true));
+		return $this->_context->helper('html')->script($options['target'], array('inline' => true));
 
 	}
 
