@@ -158,7 +158,7 @@ class Assetic extends \lithium\template\Helper {
 
 		$options['target'] = self::normalizeExtension($options['target'], $options['type']);
 		$ac->setTargetPath($options['target']);
-		$am->set($options['name'], $ac);
+		$am->set(str_replace('.', '', $options['target']), $ac);
 
 		//echo $ac->dump(); exit;
 		// Write static assets
@@ -238,7 +238,7 @@ class Assetic extends \lithium\template\Helper {
 
 		$options['target'] = self::normalizeExtension($options['target'], $options['type']);
 		$ac->setTargetPath($options['target']);
-		$am->set($options['name'], $ac);
+		$am->set(str_replace('.', '', $options['target']), $ac);
 
 		//echo $ac->dump(); exit;
 		// Write static assets
