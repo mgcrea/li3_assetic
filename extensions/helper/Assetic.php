@@ -162,7 +162,7 @@ class Assetic extends \lithium\template\Helper {
 
 		//echo $ac->dump(); exit;
 		// Write static assets
-		if($options['force'] || !is_file($this->stylesWebroot . DS . $options['target'])) {
+		if($options['force'] || !is_file(static::$config['stylesPath'] . DS . $options['target'])) {
 			$aw->writeManagerAssets($am);
 		}
 
@@ -242,7 +242,7 @@ class Assetic extends \lithium\template\Helper {
 
 		//echo $ac->dump(); exit;
 		// Write static assets
-		if($options['force'] || !is_file($this->scriptsWebroot . DS . $options['target'])) {
+		if($options['force'] || !is_file(static::$config['scriptsPath'] . DS . $options['target'])) {
 			$aw->writeManagerAssets($am);
 		}
 
