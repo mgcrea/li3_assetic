@@ -264,7 +264,7 @@ class Assetic extends \lithium\template\Helper {
 
 	}
 
-	private function registerFilters($filters) {
+	private static function registerFilters($filters) {
 		if(!is_array($filters)) $filters = array($filters);
 
 		$fm =& static::$filterManager;
