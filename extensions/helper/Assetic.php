@@ -219,6 +219,7 @@ class Assetic extends \lithium\template\Helper {
 			'target' => "main",
 			'type' => "script",
 			'force' => false,
+			'async' => false,
 			'filters' => array()
 		);
 		$options += $defaults;
@@ -246,7 +247,7 @@ class Assetic extends \lithium\template\Helper {
 			$aw->writeManagerAssets($am);
 		}
 
-		return $this->_context->helper('html')->script($options['target'] . ($options['version'] ? '?' . $options['version'] : ''), array('inline' => true));
+		return $this->_context->helper('html')->script($options['target'] . ($options['version'] ? '?' . $options['version'] : ''), array('inline' => true, 'async' => $options['async']));
 
 	}
 
