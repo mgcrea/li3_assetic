@@ -139,6 +139,7 @@ class Assetic extends \lithium\template\Helper {
 			'target' => "main",
 			'type' => "style",
 			'force' => false,
+			'version' => null,
 			'filters' => array()
 		);
 		$options += $defaults;
@@ -220,6 +221,7 @@ class Assetic extends \lithium\template\Helper {
 			'type' => "script",
 			'force' => false,
 			'async' => false,
+			'version' => null,
 			'filters' => array()
 		);
 		$options += $defaults;
